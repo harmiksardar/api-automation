@@ -11,4 +11,4 @@ before_script:
 - newman --version
 
 script:
-- newman run test/API_Automation.postman_collection.json -g test/My_Workspace.postman_globals.json
+- newman run test/API_Automation.postman_collection.json -g test/My_mWorkspace.postman_globals.json
