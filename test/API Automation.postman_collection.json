@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "9dabf9b2-ba31-4bb0-9f34-1944cf84fa23",
+		"name": "API Automation",
+		"description": "Testing API automation with Postman and Newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38a76592-dbb9-4e12-8a6c-d89083f9e05c",
+						"exec": [
+							"//First Test Case",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"//Second Test Case",
+							"tests[\"Body matches string\"] = responseBody.has(\"Michael\");",
+							"",
+							"//Third Test Case",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Response should have id of 5: \" ] = jsonData.data[1].id === 8;",
+							"",
+							"//Fourth Test Case",
+							"tests[\"Response should have last name of Ferguson\" ] = jsonData.data[0].last_name === \"Lawson\";"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "cde294da-ff7d-4262-ab91-81c8b51e2b7c",
+						"exec": [
+							"postman.setGlobalVariable(\"Token\", \"MyDemoToken\");",
+							"postman.setEnvironmentVariable(\"MyKey\", \"MyDemoKey\");",
+							"postman.getGlobalVariable(\"MyDemoKey\");",
+							"console.log(\"Global Variable = \"+postman.getGlobalVariable(\"Token\"));",
+							"console.log(\"Environment Variable = \"+postman.getEnvironmentVariable(\"MyKey\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
