@@ -18,7 +18,7 @@
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
 							"//Second Test Case",
-							"tests[\"Body matches string\"] = responseBody.has(\"Michael\");",
+							"tests[\"Body matches string\"] = responseBody.has(\"Michaelangelo\");",
 							"",
 							"//Third Test Case",
 							"var jsonData = JSON.parse(responseBody);",
