@@ -2,4 +2,4 @@
 
 # api-automation
 
-API automation with Postman and Newman 
+API automation with Postman and Newman (apparently Newman was the name of the Postman in the series "Seinfeld")
