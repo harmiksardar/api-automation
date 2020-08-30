@@ -4,4 +4,4 @@
 
 API automation with Postman and Newman 
 
-(Newman was the name of the Postman in the series "Seinfeld")
+(Newman was the name of the Postman in the popular series "Seinfeld")
